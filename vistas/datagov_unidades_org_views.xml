@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- formulario para añadir, lo que sale al dar a NUEVO -->
+    <record id="datagov_unidades_org_vista_nuevo_form" model="ir.ui.view">
+        <field name="name">datagov.unidades.org.form</field>
+        <field name="model">datagov.organization.unit</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <!-- la etiqueta en la parte superior -->
+                        <label for="name" class="o_form_input" string="Nombre del departamento"/>
+                        <h1>
+                            <field name="name"/> <!-- se pone el nombre del atributo en el field -->
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="description" options="{'no_create': True, 'no_edit': True}"/>
+                    </group>
+                    <notebook>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- esto es para personalizar la tabla (fijarse en la etiqueta tree) -->
+    <record id="datagov_unidades_org_vista_tabla" model="ir.ui.view">
+        <field name="name">datagov.unidades.org.tabla</field>
+        <field name="model">datagov.organization.unit</field>
+        <field name="arch" type="xml">
+            <!-- lo de col y colspan es para el ancho de las columnas -->
+            <tree string="Departamento">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- menu 'principal' -->
+    <record id="datagov_vista_unidades_org_action" model="ir.actions.act_window">
+        <field name="name">Departamentos</field>
+        <field name="res_model">datagov.organization.unit</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_available': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Defina un departamento para visualizarlo aquí
+            </p>
+            <p>
+                Gestiona mejor tus grupos de actores añadiendo un departamento al modelo.
+            </p>
+        </field>
+    </record>
+</odoo>

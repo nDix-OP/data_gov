@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- formulario para añadir nuevo, lo que sale al dar a NUEVO    -->
+    <record id="datagov_politicas_vista_nuevo_form" model="ir.ui.view">
+        <field name="name">datagov.politicas.form</field>
+        <field name="model">datagov.policy</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet> <!-- empieza la hoja en si -->
+                    <div class="oe_title">
+                        <!-- la etiqueta en la parte superior -->
+                        <label for="name" class="o_form_input" string="Nombre de la política"/>
+                        <h1>
+                            <field name="name"/> <!-- se pone el nombre del atributo en el field -->
+                        </h1>
+                    </div>
+                    <group>
+                        <!-- aquí están los que van antes de las pestañas, agrupados en columnas -->
+                        <group>
+                            <field name="status" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="category" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="statement" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="scope" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
+                        <group>
+                            <field name="statusDate" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="owner" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="rationale" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="implication" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
+                    </group>
+                    <!-- Aqui empiezan las pestañas -->
+                    <notebook>
+                        <page string="Procedimientos">
+                            <field name="procedure"/>
+                        </page>
+                        <page string="Estándares">
+                            <field name="standard"/>
+                        </page>
+                        <page string="KPIs asociados a la política">
+                            <field name="metric"/>
+                        </page>
+                        <page string="KPIs de calidad de datos asociados a la política">
+                            <field name="dataQualityMetric"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- menu para hacer la tabla -->
+    <record id="datagov_politicas_vista_tabla" model="ir.ui.view">
+        <field name="name">datagov.politicas.tabla</field>
+        <field name="model">datagov.policy</field>
+        <field name="arch" type="xml">
+            <tree string="Políticas">
+                <field name="name"/>
+                <field name="statement"/>
+                <field name="rationale" optional="hide"/>
+                <field name="implication" optional="hide"/>
+                <field name="scope"/>
+                <field name="category"/>
+                <field name="owner"/>
+                <field name="status"/>
+                <field name="statusDate"/>
+                <field name="procedure" widget="many2many_tags"/>
+                <field name="standard" widget="many2many_tags"/>
+                <field name="metric" widget="many2many_tags"/>
+                <field name="dataQualityMetric" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- menu para la búsqueda -->
+     <record id="datagov_politicas_vista_buscar" model="ir.ui.view">
+        <field name="name">datagov.politicas.search</field>
+        <field name="model">datagov.policy</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- aquí va el nombre de los atributos, no el que se muestra por la interfaz -->
+                <field name="name"/>
+                <field name="category" optional="hide"/>
+                <field name="owner" optional="hide"/>
+                <field name="statement" optional="hide"/>
+                <field name="rationale" optional="hide"/>
+                <field name="implication" optional="hide"/>
+                <field name="scope" optional="hide"/>
+                <field name="status" optional="hide"/>
+                <field name="statusDate" optional="hide"/>
+                <field name="procedure" optional="hide"/>
+                <field name="standard" optional="hide"/>
+                <field name="metric" optional="hide"/>
+                <field name="dataQualityMetric" optional="hide"/>
+                <!-- para que en el botón de agrupar te ponga si quieres por categoría -->
+                <group expand="1" string="Group By">
+                    <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
+                    <filter string="Estado" name='status' context="{'group_by':'status'}"/>
+                    <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
+                    <filter string="Procedimiento" name='procedure' context="{'group_by':'procedure'}"/>
+                    <filter string="Estándar" name='standard' context="{'group_by':'standard'}"/>
+                    <filter string="Métrica" name='metric' context="{'group_by':'metric'}"/>
+                    <filter string="Métrica de calidad de datos" name='dataQualityMetric'
+                            context="{'group_by':'dataQualityMetric'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- menu 'principal' con la lista en forma de tabla -->
+    <record id="datagov_vista_politicas_action" model="ir.actions.act_window">
+        <field name="name">Políticas</field>
+        <field name="res_model">datagov.policy</field>
+        <field name="view_mode">tree,form</field> <!-- importante sin espacios -->
+        <field name="context">{'search_default_available': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Defina una política para visualizarla aquí
+            </p>
+            <p>
+                Comience a gestionar su gobernanza de datos añadiendo una política al modelo.
+            </p>
+        </field>
+    </record>
+</odoo>

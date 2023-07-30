@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- en verdad, aunque agrupa las acciones para abrir la vista CRUD de actores, puedo juntar todas las acciones en el
+    mismo fichero
+
+     Aqui se pueden hacer tanto formularios como informes con record -->
+<odoo>
+    <!-- Formulario para añaidr o ver en detalle -->
+    <record id="datagov_dgobjectives_vista_nuevo_form" model="ir.ui.view">
+        <field name="name">datagov.dg.objective.form</field>
+        <field name="model">datagov.dg.objective</field>
+        <field name="arch" type="xml">
+            <form>
+                <!-- lo que hay en el encabezado en la barra de arriba -->
+                <!--
+                <header>
+                    <button name="action_cancel" type="object" string="Cancelar"/>
+                </header>
+                -->
+                <sheet> <!-- empieza la hoja en si -->
+                    <div class="oe_title">
+                        <!-- la etiqueta en la parte superior -->
+                        <label for="name" class="o_form_input" string="Nombre del objetivo"/>
+                        <h1>
+                            <field name="name"/> <!-- se pone el nombre del atributo en el field -->
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="date" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="description" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
+                        <group>
+                            <field name="owner" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="actor" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
+                    </group>
+                    <!-- Aqui empiezan las pestañas -->
+                    <notebook>
+                        <page string="KPIs asociados al objetivo">
+                            <field name="metric" widget="many2many"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- menu para hacer la tabla -->
+    <record id="datagov_dgobjectives_vista_tabla" model="ir.ui.view">
+        <field name="name">datagov.dg.objective.tabla</field>
+        <field name="model">datagov.dg.objective</field>
+        <field name="arch" type="xml">
+            <tree string="Objetivos de gobernanza de datos">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="date"/>
+                <field name="category" optional="hide"/>
+                <field name="actor"/>
+                <field name="owner"/>
+                <field name="metric" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- menu para la búsqueda -->
+     <record id="datagov_dgobjectives_vista_buscar" model="ir.ui.view">
+        <field name="name">datagov.dg.objective.search</field>
+        <field name="model">datagov.dg.objective</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- aquí va el nombre de los atributos, no el que se muestra por la interfaz -->
+                <field name="name"/>
+                <field name="date"/>
+                <field name="description"/>
+                <field name="category"/>
+                <field name="actor"/>
+                <field name="owner"/>
+                <field name="metric"/>
+                <!-- para que en el botón de agrupar te ponga si quieres por categoría -->
+                <group expand="1" string="Group By">
+                    <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
+                    <filter string="Responsable" name='actor' context="{'group_by':'actor'}"/>
+                    <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
+                    <filter string="KPI asociado" name='metric' context="{'group_by':'metric'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- menu 'principal' que gestiona los demás -->
+    <record id="datagov_vista_dgobjectives_action" model="ir.actions.act_window">
+        <field name="name">Objetivos de gobernanza</field>
+        <field name="res_model">datagov.dg.objective</field>
+        <field name="view_mode">tree,form</field> <!-- importante sin espacios -->
+        <field name="context">{'search_default_available': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Defina un objetivo de gobernanza de datos para visualizarlo aquí
+            </p>
+            <p>
+                Comience a gestionar su gobernanza de datos añadiendo un objetivo al modelo.
+            </p>
+        </field>
+    </record>
+</odoo>

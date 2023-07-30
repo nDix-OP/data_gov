@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menú de arriba, o en la parte izquierda con las opciones desplegadas -->
+    <!-- el texto de aquí es el que se ve en la interfaz, asi que aquí en español -->
+    <menuitem id="datagov_menu_root" name="Gobernanza de datos">
+        <menuitem id="datagov_menu_principios_alineamiento" name="Principios y objetivos" sequence="2">
+            <menuitem id="datagov_menu_principios" action="datagov_vista_principios_action" sequence="3"/>
+            <menuitem id="datagov_menu_dgobjectives" action="datagov_vista_dgobjectives_action" sequence="5"/>
+        </menuitem>
+        <menuitem id="datagov_menu_activos" name="Gobierno" sequence="5">
+            <menuitem id="datagov_menu_roles" action="datagov_vista_roles_action" sequence="5"/>
+            <menuitem id="datagov_menu_politicas" action="datagov_vista_politicas_action" sequence="10"/>
+            <menuitem id="datagov_menu_procedimientos" action="datagov_vista_procedimientos_action" sequence="15"/>
+            <menuitem id="datagov_menu_estandares" action="datagov_vista_estandares_action" sequence="20"/>
+        </menuitem>
+        <menuitem id="datagov_menu_organizacion" name="Organización" sequence="10">
+            <menuitem id="datagov_menu_actores" action="datagov_vista_actores_action" sequence="5"/>
+            <menuitem id="datagov_menu_unidades_org" action="datagov_vista_unidades_org_action" sequence="10"/>
+            <menuitem id="datagov_menu_ubicaciones" action="datagov_vista_ubicaciones_action" sequence="20"/>
+        </menuitem>
+        <menuitem id="datagov_menu_catalogos" name="Catálogos" sequence="15">
+            <menuitem id="datagov_menu_activos_informacion" action="datagov_vista_activos_informacion_action" sequence="21"/>
+            <menuitem id="datagov_menu_entidades_datos" action="datagov_vista_entidades_datos_action" sequence="22"/>
+            <menuitem id="datagov_menu_elementos_datos" action="datagov_vista_elementos_datos_action" sequence="23"/>
+            <menuitem id="datagov_menu_data_sources" action="datagov_vista_data_sources_action" sequence="25"/>
+            <menuitem id="datagov_menu_glosario_terminos" action="datagov_vista_terminos_glosario_action" sequence="30"/>
+            <menuitem id="datagov_menu_categorias" action="datagov_vista_categorias_action" sequence="35"/>
+        </menuitem>
+        <menuitem id="datagov_menu_gestion_activos" name="Gestión" sequence="20">
+            <menuitem id="datagov_menu_requisitos_calidad_datos" action="datagov_vista_requisitos_calidad_datos_action"
+                      sequence="10"/>
+            <menuitem id="datagov_menu_caracteristica_calidad_datos" action="datagov_vista_caracteristica_calidad_datos_action"
+                      sequence="15"/>
+            <menuitem id="datagov_menu_reglas_calidad" action="datagov_vista_reglas_calidad_action" sequence="20"/>
+            <menuitem id="datagov_menu_clasificacion_seguridad" action="datagov_vista_clasificacion_seguridad_action" sequence="25"/>
+        </menuitem>
+        <menuitem id="datagov_menu_supervision" name="Supervisión" sequence="25">
+            <menuitem id="datagov_menu_kpi" action="datagov_vista_kpi_action" sequence="15"/>
+            <menuitem id="datagov_menu_medidas_calidad_datos" action="datagov_vista_medidas_calidad_datos_action" sequence="20"/>
+            <menuitem id="datagov_menu_parametros" action="datagov_vista_parametros_action" sequence="25"/>
+        </menuitem>
+    </menuitem>
+</odoo>

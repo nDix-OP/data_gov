@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Definir la categoría exclusiva para KPI de calidad de datos -->
+    <data noupdate="1">
+        <record id="0" model="datagov.category">
+            <field name="name">Medida de calidad de datos</field>
+            <field name="description">Categoría que abarca los KPIs relacionados con la calidad de los datos.</field>
+            <field name="type">KPI</field>
+        </record>
+    </data>
+    <!-- Definir un nuevo grupo de usuarios, que tendrá todos los permisos del módulo (archivo seguridad)
+         Antes creo una categoría para que se vea mejor en la interfaz -->
+    <record model="ir.module.category" id="module_category_datagov">
+        <field name="name">Activos de información</field>
+        <field name="description">Grupo de permisos para los activos de información.</field>
+    </record>
+    <record id="group_datagov_admin" model="res.groups">
+        <field name="name">Administrador de activos de información</field>
+        <field name="comment">Grupo con todos los permisos sobre las entidades del módulo de activos de información.</field>
+    </record>
+</odoo>

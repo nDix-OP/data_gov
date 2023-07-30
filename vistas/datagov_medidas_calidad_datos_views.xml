@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="datagov_medidas_calidad_datos_vista_nuevo_form" model="ir.ui.view">
+        <field name="name">datagov.medidas.calidad.datos.form</field>
+        <field name="model">datagov.data.quality.property.measure</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet> <!-- empieza la hoja en si -->
+                    <div class="oe_title">
+                        <!-- la etiqueta en la parte superior -->
+                        <label for="name" class="o_form_input" string="Nombre del KPI de calidad de datos"/>
+                        <h1>
+                            <field name="name"/> <!-- se pone el nombre del atributo en el field -->
+                        </h1>
+                    </div>
+                    <group>
+                        <!-- aqui estan los que van antes de las pestañas, agrupados en columnas -->
+                        <group>
+                            <field name="category" options="{'no_create': True, 'no_edit': True}" readonly="1"
+                                required="False"/>
+                            <field name="question" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="interpretation" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="collectedBy" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="disseminationMode" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="description" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
+                        <group>
+                            <field name="owner" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="calculation" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="objective" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="frequencyOfCollection" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="frequencyOfDissemination" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="dataQualityCharacteristic" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
+                    </group>
+                    <!-- Aqui empiezan las pestañas -->
+                    <notebook>
+                        <page string="Difusión de la métrica">
+                            <group> <!-- para que salga el nombre del campo a la izquierda, y solo en este -->
+                                <group>
+                                    <field name="disseminatedBy"/>
+                                </group>
+                            </group>
+                            <p><b>Difundido a:</b></p>
+                            <field name="disseminatedTo"/>
+                        </page>
+                        <page string="Parámetros de entrada">
+                            <field name="inputParameter"/>
+                        </page>
+                        <page string="Requisitos de calidad de datos">
+                            <field name="dataQualityRequirement"/>
+                        </page>
+                        <page string="Políticas">
+                            <field name="policy"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- menu para hacer la tabla -->
+    <record id="datagov_medidas_calidad_datos_vista_tabla" model="ir.ui.view">
+        <field name="name">datagov.medidas.calidad.datos.tabla</field>
+        <field name="model">datagov.data.quality.property.measure</field>
+        <field name="arch" type="xml">
+            <tree string="Indicadores de calidad de datos (KPIs)">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="category" optional="hide"/> <!-- siempre el mismo -->
+                <field name="owner"/>
+                <field name="objective" optional="hide"/>
+                <field name="dataQualityCharacteristic" optional="hide"/>
+                <field name="dataQualityRequirement" widget="many2many_tags" optional="hide"/>
+                <field name="question" optional="hide"/>
+                <field name="calculation" optional="hide"/>
+                <field name="interpretation" optional="hide"/>
+                <field name="collectedBy"/>
+                <field name="frequencyOfCollection"/>
+                <field name="disseminationMode" optional="hide"/>
+                <field name="frequencyOfDissemination" optional="hide"/>
+                <field name="disseminatedBy" optional="hide"/>
+                <field name="disseminatedTo" widget="many2many_tags" optional="hide"/>
+                <field name="inputParameter" widget="many2many_tags" optional="hide"/>
+                <field name="policy" widget="many2many_tags" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- menu para la búsqueda -->
+     <record id="datagov_medidas_calidad_datos_vista_buscar" model="ir.ui.view">
+        <field name="name">datagov.medidas.calidad.datos.search</field>
+        <field name="model">datagov.data.quality.property.measure</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- aqui va el nombre de los atributos, no el que se muestra por la interfaz -->
+                <field name="name"/>
+                <field name="category"/>
+                <field name="owner"/>
+                <field name="dataQualityCharacteristic"/>
+                <field name="dataQualityRequirement"/>
+                <field name="question"/>
+                <field name="calculation"/>
+                <field name="interpretation"/>
+                <field name="description"/>
+                <field name="collectedBy"/>
+                <field name="frequencyOfCollection"/>
+                <field name="disseminationMode"/>
+                <field name="frequencyOfDissemination"/>
+                <field name="disseminatedBy"/>
+                <field name="disseminatedTo"/>
+                <field name="inputParameter"/>
+                <field name="objective"/>
+                <field name="policy"/>
+                <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
+                <group expand="1" string="Group By">
+                    <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
+                    <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
+                    <filter string="Característica de calidad" name='dataQualityCharacteristic'
+                            context="{'group_by':'dataQualityCharacteristic'}"/>
+                    <filter string="Requisito de calidad" name='dataQualityRequirement'
+                            context="{'group_by':'dataQualityRequirement'}"/>
+                    <filter string="Recogido por" name='collectedBy' context="{'group_by':'collectedBy'}"/>
+                    <filter string="Difundido por" name='disseminatedBy' context="{'group_by':'disseminatedBy'}"/>
+                    <filter string="Difundido a" name='disseminatedTo' context="{'group_by':'disseminatedTo'}"/>
+                    <filter string="Parámetro de entrada" name='inputParameter' context="{'group_by':'inputParameter'}"/>
+                    <filter string="Objetivo" name='objective' context="{'group_by':'objective'}"/>
+                    <filter string="Política" name='policy' context="{'group_by':'policy'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- menu 'principal' con la lista en forma de tabla -->
+    <record id="datagov_vista_medidas_calidad_datos_action" model="ir.actions.act_window">
+        <field name="name">Indicadores de calidad de datos (KPIs)</field>
+        <field name="res_model">datagov.data.quality.property.measure</field>
+        <field name="view_mode">tree,form</field> <!-- importante sin espacios -->
+        <field name="context">{'search_default_available': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Defina un indicador de calidad de datos para visualizarlo aquí
+            </p>
+            <p>
+                Asegúrese de estar cumpliendo sus objetivos de calidad de datos añadiendo un indicador.
+            </p>
+        </field>
+    </record>
+</odoo>
