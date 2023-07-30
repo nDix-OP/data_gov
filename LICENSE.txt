@@ -1,0 +1,61 @@
+All Rights Reserved License
+
+1. Ownership: The software and all associated intellectual property rights are owned and retained by Iván Ortiz del Noval, hereinafter referred to as
+'The author'. No rights are granted to the user except as expressly stated herein.
+
+2. Prohibitions: Without the explicit written consent of The author, the user is strictly prohibited from:
+
+   a. Selling, sublicensing, or transferring the software, in whole or in part, to any third party.
+   b. Distributing, sharing, or making the software available to others, whether for commercial or non-commercial purposes.
+   c. Modifying, adapting, translating, reverse engineering, decompiling, or creating derivative works based on the software.
+
+3. Usage: The software is provided for use solely by the user for internal purposes within their own organization. Any other use is strictly prohibited.
+
+4. No Warranty: The software is provided "as is" without any warranty, express or implied. The author disclaims any and all warranties, including but not
+limited to fitness for a particular purpose, non-infringement, and merchantability.
+
+5. Limitation of Liability: In no event shall The author be liable for any direct, indirect, special, incidental, or consequential damages arising out of
+or in connection with the use or inability to use the software.
+
+6. Termination: This license is effective until terminated. The author reserves the right to terminate this license at any time if the user fails to
+comply with the terms and conditions stated herein.
+
+7. Governing Law: This license shall be governed by and construed in accordance with the laws of Spain, without regard to its conflicts of laws principles.
+
+By using the software, the user agrees to be bound by the terms of this license. If you do not agree to these terms, you are not authorized to use the
+software.
+
+© Iván Ortiz del Noval. All Rights Reserved.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Licencia comercial. Todos los derechos reservados
+
+1. Propiedad: El software y todos los derechos de propiedad intelectual asociados son propiedad de Iván Ortiz del Noval, en adelante denominado como
+'El autor'. No se otorgan derechos al usuario excepto los expresamente establecidos en este documento.
+
+2. Prohibiciones: Sin el consentimiento explícito por escrito del autor, el usuario tiene terminantemente prohibido:
+
+     a. Vender, sublicenciar o transferir el software, en su totalidad o en parte, a un tercero.
+     b. Distribuir, compartir o poner el software a disposición de otros, ya sea con fines comerciales o no comerciales.
+     C. Modificar, adaptar, traducir, realizar ingeniería inversa, descompilar o crear trabajos derivados basados en el software.
+
+3. Uso: El software se proporciona para uso exclusivo del usuario con fines internos dentro de su propia organización. Cualquier otro uso está estrictamente
+prohibido.
+
+4. Sin garantía: el software se proporciona "tal cual" sin ninguna garantía, expresa o implícita. El autor renuncia a todas y cada una de las garantías,
+incluidas, entre otras, limitado a la idoneidad para un propósito particular, no infracción y comerciabilidad.
+
+5. Limitación de responsabilidad: en ningún caso el autor será responsable de ningún daño directo, indirecto, especial, incidental o consecuente que surja
+de o en relación con el uso o la imposibilidad de usar el software.
+
+6. Terminación: Esta licencia es efectiva hasta que se termine. El autor se reserva el derecho de rescindir esta licencia en cualquier momento si el usuario
+no cumple con los términos y condiciones establecidos en este documento.
+
+7. Ley aplicable: Esta licencia se regirá e interpretará de conformidad con las leyes de España, sin tener en cuenta sus conflictos de principios legales.
+
+Al usar el software, el usuario acepta estar sujeto a los términos de esta licencia. Si no está de acuerdo con estos términos, no está autorizado a utilizar
+el software.
+
+© Iván Ortiz del Noval. Todos los derechos reservados.
