@@ -1,2 +1,4 @@
-# data_gov
-Repositorio con el módulo de Gobernanza de Datos. Es una copia de 'TFG' solo con esta carpeta para poder publicarlo correctamente en la tienda de apps de Odoo.
+Gobernanza de Datos
+Módulo de Gobernanza de Datos para Odoo. Permite definir un marco de gobernanza de datos para la organización.
+
+Fuente del logo: https://www.flaticon.es/icono-gratis/hoja-de-calculo_4828991
