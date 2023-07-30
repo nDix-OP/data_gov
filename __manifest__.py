@@ -9,7 +9,7 @@
         "base",
         "web"
     ],
-    "description": "Data governance utilities.",
+    "description": "Herramienta para la definición de un marco de gobernanza de datos dentro de la compañía.",
     "data": [
         # rellenar con archivos, los csv o xml, ...
         "datos/datagov_datos_iniciales.xml",  # cargar datos iniciales
@@ -39,5 +39,9 @@
         "vistas/datagov_main_menu.xml",  # IMPORTANTE: ponerlo al final porque usa cosas de los otros xml de vistas
     ],
     "application": True,
-    "license": "LGPL-3",
+    "license": "Other proprietary",  # Indicar que no es de las libres, está en LICENSE.txt
+    "version": "1.0",
+    "price": 99.00,
+    "currency": "EUR",
+    "support": "odoo.ivan98barcelona@hotmail.com"  # opcional
 }
