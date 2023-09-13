@@ -41,7 +41,7 @@
     "application": True,
     "license": "LGPL-3",
     "version": "1.0",
-    "price": 99.00,
+    "price": 0.00,
     "currency": "EUR",
     "support": "marta.zorrilla@unican.es"  # opcional
 }
