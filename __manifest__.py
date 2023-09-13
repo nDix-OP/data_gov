@@ -39,9 +39,9 @@
         "vistas/datagov_main_menu.xml",  # IMPORTANTE: ponerlo al final porque usa cosas de los otros xml de vistas
     ],
     "application": True,
-    "license": "Other proprietary",  # Indicar que no es de las libres, está en LICENSE.txt
+    "license": "LGPL-3",
     "version": "1.0",
     "price": 99.00,
     "currency": "EUR",
-    "support": "odoo.ivan98barcelona@hotmail.com"  # opcional
+    "support": "marta.zorrilla@unican.es"  # opcional
 }
