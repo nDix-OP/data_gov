@@ -2,7 +2,7 @@
 # More info at https://www.odoo.com/documentation/master/reference/module.html
 
 {
-    "name": "Gobernanza de datos",
+    "name": "Trenti Data Governance",
     "author": "Iván Ortiz del Noval",
     "category": 'Data/Technical',
     "depends": [
