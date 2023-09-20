@@ -37,6 +37,7 @@
         "vistas/datagov_requisitos_calidad_datos_views.xml",
         "vistas/datagov_medidas_calidad_datos_views.xml",
         "vistas/datagov_main_menu.xml",  # IMPORTANTE: ponerlo al final porque usa cosas de los otros xml de vistas
+        "static/description/icon.png",  # Logo
     ],
     "application": True,
     "license": "LGPL-3",
