@@ -3,7 +3,7 @@
 
 {
     "name": "Trenti Data Governance",
-    "author": "Iván Ortiz del Noval",
+    "author": "Universidad de Cantabria",
     "category": 'Data/Technical',
     "depends": [
         "base",
