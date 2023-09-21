@@ -44,5 +44,6 @@
     "version": "1.0",
     "price": 0.00,
     "currency": "EUR",
-    "support": "marta.zorrilla@unican.es"  # opcional
+    "support": "marta.zorrilla@unican.es",  # opcional
+    "images": ["images/thumbnail.png"],  # miniatura de la tienda
 }
